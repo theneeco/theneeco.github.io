@@ -12,49 +12,84 @@
 const CONTENT = {
 
   // ---------- Used in the header on every page, and the home page ----------
-  name: "Nikhil C Kubsad",
+  name: "[Your Name]",
   tagline: "GRC, privacy and AI governance consultant. Adelaide, South Australia.",
 
   // ---------- Home page ----------
-  heroHeadline: "Hi, I'm Nikhil. I help organisations make security and privacy decisions they can defend.",
-  heroIntro1: "I'm a GRC, privacy and AI governance consultant in Australia. I started out breaking into systems as a penetration tester, then moved to the other side of the table: audits, controls testing, risk and privacy programmes.",
-  heroIntro2: "I'm most interested in where APRA's prudential standards, the Privacy Act and ASD's new Essentials framework meet, and in how organisations can adopt AI without losing control of it.",
+  heroHeadline: "Hi, I'm [Your Name]. I help organisations make security and privacy decisions they can defend.",
+  heroIntro1: "I'm a GRC, privacy and AI governance consultant in Adelaide. I found out how controls actually fail by trying to break them as a penetration tester, then spent years testing them from the other side: SOX controls testing, bank audits, and CRISC and CIPM in hand.",
+  heroIntro2: "Right now I'm building public evidence instead of waiting for a role to generate it: a CPS 230/234 assurance review, a live tool that tracks every regulator deadline an incident starts, and a pull request into an open-source GRC platform. Open to GRC, privacy and AI governance roles across Australia.",
   employers: ["[Employer]", "[Employer]", "[Employer]"],
 
   // ---------- Contact links, used in the header, footer and Contact page ----------
-  linkedin: "https://www.linkedin.com/in/your-handle",
-  github: "https://github.com/your-username",
+  linkedin: "https://www.linkedin.com/in/nikhilckubsad",
 
-  // ---------- Journey page: one entry per stage of your career ----------
-  // Add or remove entries by copying a whole { ... }, block. The last one with current: true gets the red dot.
+  // ---------- Journey page: one entry per stage of your career, MOST RECENT FIRST ----------
+  // Add or remove entries by copying a whole { ... }, block. The first one with current: true gets the red dot.
+  // "highlights" is the list under the "What I built" dropdown — add or remove lines freely.
   journey: [
     {
-      when: "[Year] to [Year] · [Employer]",
-      title: "Penetration testing",
-      body: "[One or two sentences: the kinds of systems you tested and what it taught you about how controls actually fail.]",
-      current: false
-    },
-    {
-      when: "[Year] to [Year] · [Employer]",
-      title: "Audit and controls testing",
-      body: "SOX controls testing and bank audits. [Add a specific: the industry, the size of the control set, or a finding you're proud of.]",
-      current: false
+      when: "Now · Adelaide",
+      company: "Independent",
+      role: "GRC, Privacy and AI Governance",
+      current: true,
+      headline: "Building public evidence instead of waiting for a role to generate it.",
+      body: "Between roles, so I'm doing the work anyway: a full CPS 230/234 assurance review, a live tool that tracks every regulator deadline an incident starts, and a pull request into an open-source GRC platform, while studying for CISA and the AIGP.",
+      learning: "That public work has to hold up without a client to catch a mistake before it ships — there's no safety net, so the rigour has to be the same or higher.",
+      highlights: [
+        "CPS 230/234 assurance review for a fictional super fund, including a Board Risk Committee paper",
+        "Breach Clock — a live tool mapping every regulator notification deadline an incident starts",
+        "Research into super funds' automated-decision disclosures ahead of the 10 Dec 2026 deadline",
+        "Pull request adding ASD Essentials to an open-source GRC platform",
+        "Studying for CISA and the IAPP AIGP"
+      ]
     },
     {
       when: "[Year] to [Year]",
-      title: "Risk and privacy",
-      body: "Earned CRISC (ISACA) and CIPM (IAPP), and contributed to the DPO Club privacy community. [Add the work you did in this period.]",
-      current: false
+      company: "[Employer]",
+      role: "Risk and Privacy",
+      current: false,
+      headline: "Privacy stopped being a clause in a risk register and became its own discipline.",
+      body: "[One or two sentences on the role itself — the programs you ran or supported, and the scale of the organisation.]",
+      learning: "Earning CRISC and CIPM, and getting involved with the DPO Club privacy community, showed me that privacy and security risk are related but not interchangeable — they need different evidence and different conversations with leadership.",
+      highlights: [
+        "CRISC (ISACA) and CIPM (IAPP) certifications",
+        "Active member of the DPO Club privacy community",
+        "[Add a specific privacy or risk program you worked on]"
+      ]
     },
     {
-      when: "Now · Adelaide",
-      title: "GRC, privacy and AI governance",
-      body: "Building public work on APRA's CPS 230 and CPS 234, the Privacy Act reforms and ASD Essentials, and looking for my next role in Australia.",
-      current: true
+      when: "[Year] to [Year] · [Employer]",
+      company: "[Employer]",
+      role: "Audit and Controls Testing",
+      current: false,
+      headline: "Testing the same controls from the other side taught me what makes one defensible.",
+      body: "SOX controls testing and bank audits — walking into organisations to check that what they said about their controls was actually true.",
+      learning: "A control that can't produce evidence it worked last quarter isn't a control yet, no matter how well the policy reads.",
+      highlights: [
+        "SOX controls testing",
+        "Bank audits",
+        "[Add a specific: the size of the control set, an industry, or a finding you're proud of]"
+      ]
+    },
+    {
+      when: "[Year] to [Year] · [Employer]",
+      company: "[Employer]",
+      role: "Penetration Testing",
+      current: false,
+      headline: "Attackers don't read policies, so neither did I.",
+      body: "Internal and external engagements against live environments: Active Directory attack paths, privilege escalation, the gap between what a policy says and what a determined attacker can actually do.",
+      learning: "The fastest way to find out whether a control works is to try to get around it, not to check whether a document describing it exists.",
+      highlights: [
+        "Internal and external penetration tests",
+        "Active Directory attack path analysis",
+        "[Add a specific engagement or finding you're proud of]"
+      ]
     }
   ],
 
   // ---------- Philosophy page: one entry per belief ----------
+  // This page is a work in progress — expect it to go through a few iterations.
   philosophy: [
     {
       title: "Start from how things actually fail",
@@ -62,7 +97,11 @@ const CONTENT = {
     },
     {
       title: "Evidence beats documents",
-      body: "A control that can't show it worked last quarter isn't a control yet. I'd rather see five controls with evidence than fifty with good intentions."
+      body: "A control that can't show it worked last quarter isn't a control yet. Give me five controls with evidence over fifty with good intentions."
+    },
+    {
+      title: "Know which clock is running",
+      body: "An incident doesn't start one deadline, it starts several at once — APRA, the OAIC, ASIC, each with its own trigger and window. Knowing which clocks apply before the incident happens is half the job."
     },
     {
       title: "Write for the person deciding",
@@ -78,21 +117,21 @@ const CONTENT = {
     }
   ],
 
-  // ---------- Work page: one entry per project ----------
+  // ---------- My Agents page: one entry per project ----------
   // status must be exactly one of: "live", "building", "planned"
   // link: the URL once it's live, or null while it isn't
-  work: [
+  agents: [
     {
       title: "Breach Clock",
-      body: "A free web tool. Answer a few questions about an incident and see every notification deadline it starts under CPS 234, CPS 230, the Privacy Act and ASIC's breach reporting rules.",
-      proves: "working knowledge of Australian financial services regulation.",
+      body: "A free web tool. Answer five or six questions about an incident and it lays out every notification clock that starts: CPS 234 (72 hours to APRA), CPS 230 (BCP activation), the Privacy Act's notifiable data breaches scheme, the proposed 72-hour OAIC regime, and ASIC RG 78 (30 days) — each linked back to the source paragraph.",
+      proves: "working knowledge of Australian financial services and privacy regulation.",
       status: "building",
       due: "Due Nov 2026",
       link: null
     },
     {
       title: "Finding to Board",
-      body: "One internal penetration test of my lab, written up three ways: a technical report, risk register entries, and a two-page paper for a Board Risk Committee.",
+      body: "One internal penetration test of my own lab, written up three ways: a technical report with evidence and CVSS, risk register entries with owners and ratings, and a two-page paper for a Board Risk Committee.",
       proves: "translating technical findings into risk and governance language.",
       status: "building",
       due: "Due Dec 2026",
@@ -100,15 +139,15 @@ const CONTENT = {
     },
     {
       title: "Automated decisions in super fund privacy policies",
-      body: "From 10 December 2026, privacy policies must disclose substantially automated decisions. I'm reviewing how the largest super funds respond, using a published scoring rubric.",
+      body: "From 10 December 2026, privacy policies must disclose substantially automated decisions. I'm scoring the public privacy policies of the 15 largest super funds, before and after the deadline, against a published rubric.",
       proves: "privacy law and AI governance applied to a real deadline.",
       status: "building",
       due: "Due mid-Dec 2026",
       link: null
     },
     {
-      title: "CPS 230 and CPS 234 assurance review",
-      body: "A full review pack for a fictional super fund: critical operations, material service providers, control testing and a board paper.",
+      title: "CPS 230 and CPS 234 assurance review — Southern Cross Super",
+      body: "A full review pack for a fictional 120k-member super fund that outsources administration, custody and cloud hosting: a critical operations register, a material service provider register, a CPS 234 control map with deliberate deficiencies, and a Board Risk Committee paper.",
       proves: "APRA prudential standards in an assurance setting.",
       status: "planned",
       due: "Dec 2026",
@@ -116,12 +155,25 @@ const CONTENT = {
     },
     {
       title: "ASD Essentials library for CISO Assistant",
-      body: "Adding ASD's new Essentials framework, published October 2026, to an open-source GRC platform, with a mapping from the Essential Eight.",
-      proves: "Essential Eight and ASD Essentials, and GRC tooling.",
+      body: "Adding ASD's new Essentials framework, published October 2026, to an open-source GRC platform used across the industry, with a mapping from the Essential Eight so both frameworks stay comparable during the transition.",
+      proves: "Essential Eight and ASD Essentials, and open-source GRC tooling.",
       status: "planned",
       due: "Jan 2027",
       link: null
     }
-  ]
+  ],
+
+  // ---------- Industry Notes page: one entry per note ----------
+  // Empty for now — add a { ... } block here (copy the commented example) when you're ready to publish the first one.
+  // {
+  //   date: "2026-11-06",
+  //   dateLabel: "6 November 2026",
+  //   title: "Headline for the note",
+  //   body: "What happened, in plain terms.",
+  //   take: "Your take on what it means.",
+  //   sourceLabel: "Source name",
+  //   sourceUrl: "https://example.com"
+  // }
+  industryNotes: []
 
 };

@@ -7,10 +7,16 @@
     var el = document.getElementById(id);
     if (el) el.textContent = text;
   }
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text !== undefined) e.textContent = text;
+    return e;
+  }
 
   // ----- Every page: the site name in the header -----
-  document.querySelectorAll('.site-name').forEach(function (el) {
-    el.textContent = CONTENT.name;
+  document.querySelectorAll('.site-name').forEach(function (node) {
+    node.textContent = CONTENT.name;
   });
 
   // ----- Home page -----
@@ -23,62 +29,127 @@
       CONTENT.employers.map(function (e) { return '<b>' + e + '</b>'; }).join(', ') + '.';
   }
 
-  // ----- Journey page -----
+  // ----- Journey page (most recent first) -----
   var journeyList = document.getElementById('journey-list');
   if (journeyList && CONTENT.journey) {
     CONTENT.journey.forEach(function (stage) {
       var li = document.createElement('li');
       if (stage.current) li.className = 'now';
-      var when = document.createElement('p'); when.className = 'when-label'; when.textContent = stage.when;
-      var h3 = document.createElement('h3'); h3.textContent = stage.title;
-      var p = document.createElement('p'); p.textContent = stage.body;
-      li.append(when, h3, p);
+
+      var roleLine = el('p', 'role-line');
+      var company = el('span', 'company', stage.company);
+      roleLine.appendChild(company);
+      roleLine.appendChild(document.createTextNode(' · ' + stage.role + ' · ' + stage.when));
+      li.appendChild(roleLine);
+
+      li.appendChild(el('p', 'headline', stage.headline));
+      li.appendChild(el('p', 'body-text', stage.body));
+
+      if (stage.learning) {
+        var learning = el('div', 'learning');
+        learning.appendChild(el('p', 'label', "What I'm learning"));
+        learning.appendChild(el('p', null, stage.learning));
+        li.appendChild(learning);
+      }
+
+      if (stage.highlights && stage.highlights.length) {
+        var details = document.createElement('details');
+        details.className = 'built';
+        var summary = document.createElement('summary');
+        summary.textContent = 'What I built';
+        details.appendChild(summary);
+        var ul = document.createElement('ul');
+        stage.highlights.forEach(function (h) { ul.appendChild(el('li', null, h)); });
+        details.appendChild(ul);
+        li.appendChild(details);
+      }
+
       journeyList.appendChild(li);
     });
   }
 
-  // ----- Philosophy page -----
+  // ----- Philosophy page (numbered cards) -----
   var philosophyWrap = document.getElementById('philosophy-list');
   if (philosophyWrap && CONTENT.philosophy) {
-    CONTENT.philosophy.forEach(function (item) {
-      var section = document.createElement('section'); section.className = 'principle';
-      var h2 = document.createElement('h2'); h2.textContent = item.title;
-      var p = document.createElement('p'); p.textContent = item.body;
-      section.append(h2, p);
+    CONTENT.philosophy.forEach(function (item, i) {
+      var section = el('section', 'principle');
+      var num = i + 1 < 10 ? '0' + (i + 1) : '' + (i + 1);
+      section.appendChild(el('p', 'num', num));
+      section.appendChild(el('h2', null, item.title));
+      section.appendChild(el('p', null, item.body));
       philosophyWrap.appendChild(section);
     });
   }
 
-  // ----- Work page -----
-  var register = document.getElementById('work-register');
-  if (register && CONTENT.work) {
-    CONTENT.work.forEach(function (proj) {
-      var article = document.createElement('article'); article.className = 'item';
-      var left = document.createElement('div');
-      var h3 = document.createElement('h3');
-      if (proj.status === 'live' && proj.link) {
-        var a = document.createElement('a'); a.href = proj.link; a.textContent = proj.title;
-        h3.appendChild(a);
-      } else {
-        h3.textContent = proj.title;
-      }
-      var body = document.createElement('p'); body.textContent = proj.body;
-      var proves = document.createElement('p'); proves.className = 'proves';
-      var b = document.createElement('b'); b.textContent = 'Shows: ';
-      proves.appendChild(b);
-      proves.appendChild(document.createTextNode(proj.proves));
-      left.append(h3, body, proves);
+  // ----- My Agents page -----
+  var register = document.getElementById('agents-register');
+  if (register) {
+    if (CONTENT.agents && CONTENT.agents.length) {
+      CONTENT.agents.forEach(function (proj) {
+        var article = el('article', 'item');
+        var left = document.createElement('div');
+        var h3 = document.createElement('h3');
+        if (proj.status === 'live' && proj.link) {
+          var a = document.createElement('a'); a.href = proj.link; a.textContent = proj.title;
+          h3.appendChild(a);
+        } else {
+          h3.textContent = proj.title;
+        }
+        var body = el('p', null, proj.body);
+        var proves = el('p', 'proves');
+        var b = el('b', null, 'Shows: ');
+        proves.appendChild(b);
+        proves.appendChild(document.createTextNode(proj.proves));
+        left.append(h3, body, proves);
 
-      var statusLabel = proj.status === 'live' ? 'Live' : (proj.status === 'building' ? 'Building' : 'Planned');
-      var statusP = document.createElement('p'); statusP.className = 'status ' + proj.status;
-      statusP.textContent = statusLabel;
-      if (proj.due) {
-        var due = document.createElement('span'); due.className = 'due'; due.textContent = proj.due;
-        statusP.appendChild(due);
-      }
-      article.append(left, statusP);
-      register.appendChild(article);
-    });
+        var statusLabel = proj.status === 'live' ? 'Live' : (proj.status === 'building' ? 'Building' : 'Planned');
+        var statusP = el('p', 'status ' + proj.status, statusLabel);
+        if (proj.due) statusP.appendChild(el('span', 'due', proj.due));
+        article.append(left, statusP);
+        register.appendChild(article);
+      });
+    } else {
+      var empty = el('div', 'empty');
+      empty.appendChild(el('p', null, "Nothing published here yet — check back soon."));
+      register.replaceWith(empty);
+    }
+  }
+
+  // ----- Industry Notes page -----
+  var notesWrap = document.getElementById('industry-notes-list');
+  if (notesWrap) {
+    if (CONTENT.industryNotes && CONTENT.industryNotes.length) {
+      CONTENT.industryNotes.forEach(function (note) {
+        var article = el('article', 'fnote');
+        if (note.date) article.id = note.date;
+        var time = document.createElement('time');
+        if (note.date) time.setAttribute('datetime', note.date);
+        time.textContent = note.dateLabel || note.date || '';
+        article.appendChild(time);
+        article.appendChild(el('h2', null, note.title));
+        article.appendChild(el('p', null, note.body));
+        if (note.take) {
+          var take = el('p', 'take');
+          take.appendChild(el('strong', null, 'My take: '));
+          take.appendChild(document.createTextNode(note.take));
+          article.appendChild(take);
+        }
+        if (note.sourceUrl) {
+          var src = el('p', 'src');
+          src.appendChild(document.createTextNode('Source: '));
+          var a = document.createElement('a');
+          a.href = note.sourceUrl;
+          a.textContent = note.sourceLabel || note.sourceUrl;
+          src.appendChild(a);
+          article.appendChild(src);
+        }
+        notesWrap.appendChild(article);
+      });
+    } else {
+      var emptyNotes = el('div', 'empty');
+      emptyNotes.appendChild(el('p', null, "No notes published yet — check back soon."));
+      notesWrap.replaceWith(emptyNotes);
+    }
   }
 
   // ----- Contact page -----
@@ -86,10 +157,5 @@
   if (linkedinLink && CONTENT.linkedin) {
     linkedinLink.href = CONTENT.linkedin;
     linkedinLink.textContent = CONTENT.linkedin.replace(/^https?:\/\//, '');
-  }
-  var githubLink = document.getElementById('github-link');
-  if (githubLink && CONTENT.github) {
-    githubLink.href = CONTENT.github;
-    githubLink.textContent = CONTENT.github.replace(/^https?:\/\//, '');
   }
 })();
