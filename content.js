@@ -12,14 +12,14 @@
 const CONTENT = {
 
   // ---------- Used in the header on every page, and the home page ----------
-  name: "[Your Name]",
-  tagline: "GRC, privacy and AI governance consultant. Adelaide, South Australia.",
+  name: "Nikhil Kubsad",
+  tagline: "GRC, privacy and AI governance professional. Adelaide, South Australia.",
 
   // ---------- Home page ----------
-  heroHeadline: "Hi, I'm [Your Name]. I help organisations make security and privacy decisions they can defend.",
-  heroIntro1: "I'm a GRC, privacy and AI governance consultant in Adelaide. I found out how controls actually fail by trying to break them as a penetration tester, then spent years testing them from the other side: SOX controls testing, bank audits, and CRISC and CIPM in hand.",
-  heroIntro2: "Right now I'm building public evidence instead of waiting for a role to generate it: a CPS 230/234 assurance review, a live tool that tracks every regulator deadline an incident starts, and a pull request into an open-source GRC platform. Open to GRC, privacy and AI governance roles across Australia.",
-  employers: ["[Employer]", "[Employer]", "[Employer]"],
+  heroHeadline: "Hi, I'm Nikhil Kubsad. I help organisations make security and privacy decisions they can defend.",
+  heroIntro1: "I'm a GRC specialist with hands-on experience running ISO 27001 ISMS programmes, internal audits and control validation, and third-party and supply-chain security from vendor intake through offboarding — across healthcare, BFSI, automotive and logistics, in India and Australia. ISO 27001 Lead Auditor and CIPM-certified, with a Master of Cyber Security from RMIT.",
+  heroIntro2: "I build tooling to replace manual GRC work rather than just doing it by hand — internal apps for TPRM reporting, gap assessment generation and contract review. Currently searching for my next GRC, privacy or AI governance role in Australia, and building public projects in the meantime.",
+  employers: ["Tsaaro Consulting", "CyRAACS", "LTG Infrastructure"],
 
   // ---------- Contact links, used in the header, footer and Contact page ----------
   linkedin: "https://www.linkedin.com/in/nikhilckubsad",
@@ -29,61 +29,92 @@ const CONTENT = {
   // "highlights" is the list under the "What I built" dropdown — add or remove lines freely.
   journey: [
     {
-      when: "Now · Adelaide",
-      company: "Independent",
+      when: "Oct 2026 · Now · Adelaide",
+      company: "Searching",
       role: "GRC, Privacy and AI Governance",
       current: true,
-      headline: "Building public evidence instead of waiting for a role to generate it.",
-      body: "Between roles, so I'm doing the work anyway: a full CPS 230/234 assurance review, a live tool that tracks every regulator deadline an incident starts, and a pull request into an open-source GRC platform, while studying for CISA and the AIGP.",
-      learning: "That public work has to hold up without a client to catch a mistake before it ships — there's no safety net, so the rigour has to be the same or higher.",
+      headline: "Between roles, so I'm doing the work anyway.",
+      body: "Left Tsaaro Consulting on 2 October 2026 and I'm now looking for my next GRC, privacy or AI governance role in Australia. In the meantime I'm building self-directed projects — a regulatory-deadline tool, an open-source GRC contribution, assurance-review work — as public evidence rather than waiting for a role to generate it.",
+      learning: "That public work has to hold up without a client or a manager to catch a mistake before it ships — there's no safety net, so the rigour has to be the same or higher.",
       highlights: [
-        "CPS 230/234 assurance review for a fictional super fund, including a Board Risk Committee paper",
         "Breach Clock — a live tool mapping every regulator notification deadline an incident starts",
-        "Research into super funds' automated-decision disclosures ahead of the 10 Dec 2026 deadline",
+        "CPS 230/234 assurance review for a fictional super fund, including a Board Risk Committee paper",
         "Pull request adding ASD Essentials to an open-source GRC platform",
-        "Studying for CISA and the IAPP AIGP"
+        "See the My Agents page for the full list"
       ]
     },
     {
-      when: "[Year] to [Year]",
-      company: "[Employer]",
-      role: "Risk and Privacy",
+      when: "Sep 2025 to Oct 2026 · Remote",
+      company: "Tsaaro Consulting",
+      role: "Manager — Data Privacy & AI Governance",
       current: false,
-      headline: "Privacy stopped being a clause in a risk register and became its own discipline.",
-      body: "[One or two sentences on the role itself — the programs you ran or supported, and the scale of the organisation.]",
-      learning: "Earning CRISC and CIPM, and getting involved with the DPO Club privacy community, showed me that privacy and security risk are related but not interchangeable — they need different evidence and different conversations with leadership.",
+      headline: "Took governance programmes from policy to evidence for clients across multiple frameworks at once.",
+      body: "Ran ISO 27001 and SOC 2 readiness engagements end to end — scoping, gap and risk assessments, control validation, remediation support and evidence handling for external audit and attestation — while defining and operationalising governance policies and control frameworks aligned to ISO 27001, NIST 800-53/171, DPDPA, PDPL and UK-GDPR.",
+      learning: "Training a whole organisation on information security governance taught me more about where controls actually break than any audit did — the gap is almost always in how a policy gets explained, not in the policy itself.",
       highlights: [
-        "CRISC (ISACA) and CIPM (IAPP) certifications",
-        "Active member of the DPO Club privacy community",
-        "[Add a specific privacy or risk program you worked on]"
+        "ISO 27001 and SOC 2 readiness: scoping, gap/risk assessments, control validation, remediation, evidence handling",
+        "Governance policies and control frameworks aligned to ISO 27001, NIST 800-53/171, DPDPA, PDPL and UK-GDPR",
+        "Updated a client's third-party risk management framework, including vendor risk criteria and ongoing monitoring",
+        "Management-level risk, control and remediation reviews for senior stakeholders",
+        "Organisation-wide training on information security governance and control implementation",
+        "Built a vibe-coded internal tool to automate contract review, flagging high-risk clauses for legal and risk sign-off"
       ]
     },
     {
-      when: "[Year] to [Year] · [Employer]",
-      company: "[Employer]",
-      role: "Audit and Controls Testing",
+      when: "Feb 2024 to Aug 2025 · Bengaluru",
+      company: "CyRAACS",
+      role: "Consultant — Governance, Risk and Compliance",
       current: false,
-      headline: "Testing the same controls from the other side taught me what makes one defensible.",
-      body: "SOX controls testing and bank audits — walking into organisations to check that what they said about their controls was actually true.",
-      learning: "A control that can't produce evidence it worked last quarter isn't a control yet, no matter how well the policy reads.",
+      headline: "Spent a year embedded inside a major bank's TPRM function, then automated the parts that didn't need a human.",
+      body: "Led end-to-end engagements from scoping through gap and risk assessments across ISO 27001, ISO 27701, SOC 2, NIST 800-53/171, DPDPA and PDPL, on both internal audit and external audit-readiness work. Spent part of this role as an outsourced third-party risk management resource embedded on-site at a major publicly-traded Indian bank, reporting directly to the bank's Head of TPRM.",
+      learning: "Reporting straight to a Head of TPRM inside a regulated bank showed me the difference between a finding that's technically correct and one a business owner can actually act on — translating one into the other is most of the job.",
       highlights: [
-        "SOX controls testing",
-        "Bank audits",
-        "[Add a specific: the size of the control set, an industry, or a finding you're proud of]"
+        "End-to-end engagements across ISO 27001, ISO 27701, SOC 2, NIST 800-53/171, DPDPA and PDPL",
+        "Internal audit team member, plus leading external audit-readiness engagements",
+        "Control validation, risk registers and Management Review Meetings (MRM)",
+        "Embedded on-site TPRM resource at a major publicly-traded Indian bank, reporting to the Head of TPRM",
+        "Built a vibe-coded internal tool to automate TPRM reporting, reducing manual turnaround time",
+        "Built a vibe-coded internal tool to automate gap assessment report generation"
       ]
     },
     {
-      when: "[Year] to [Year] · [Employer]",
-      company: "[Employer]",
-      role: "Penetration Testing",
+      when: "Jul 2022 to Oct 2022 · Melbourne",
+      company: "RMIT University",
+      role: "GRC Intern",
+      current: false,
+      headline: "First real exposure to privacy as its own discipline, not a line item in a risk register.",
+      body: "Mapped and documented IT infrastructure and streamlined procedural guidelines in Collibra, and supported Privacy Impact Assessments aligned with GDPR and the Australian Privacy Act.",
+      learning: "Even a short internship was enough to see that data governance tooling is only as good as the documentation habits behind it — the platform doesn't fix a team that doesn't update its records.",
+      highlights: [
+        "Mapped and documented IT infrastructure in Collibra",
+        "Supported Privacy Impact Assessments aligned with GDPR and the Australian Privacy Act"
+      ]
+    },
+    {
+      when: "Sep 2021 to Feb 2022 · Bengaluru",
+      company: "LTG Infrastructure",
+      role: "Junior Cyber Security Analyst",
+      current: false,
+      headline: "Helped stand up a security programme from zero as the second person on the team.",
+      body: "As the second member of a two-person security team reporting to the Head of InfoSec, helped build the organisation's security programme from the ground up, including access control, least-privilege practices and organisation-wide MFA.",
+      learning: "Building a security programme with two people meant there was nowhere to hide — you learn fast which controls actually get used and which ones just look good in a policy document.",
+      highlights: [
+        "Implemented access control and least-privilege practices",
+        "Rolled out multi-factor authentication (MFA) across the organisation"
+      ]
+    },
+    {
+      when: "Jan 2021 to Aug 2021 · Mysore",
+      company: "Excelsoft Technologies",
+      role: "Application Security Tester",
       current: false,
       headline: "Attackers don't read policies, so neither did I.",
-      body: "Internal and external engagements against live environments: Active Directory attack paths, privilege escalation, the gap between what a policy says and what a determined attacker can actually do.",
-      learning: "The fastest way to find out whether a control works is to try to get around it, not to check whether a document describing it exists.",
+      body: "Conducted web application penetration tests using OWASP ZAP and Burp Suite, mapping findings to the OWASP Top 10 and CWE Top 25, and delivered reports with a step-by-step proof of concept and prioritised remediation for every vulnerability.",
+      learning: "Writing a proof of concept for every finding, not just a severity rating, taught me that a report only changes behaviour if the reader can see exactly how the attack worked.",
       highlights: [
-        "Internal and external penetration tests",
-        "Active Directory attack path analysis",
-        "[Add a specific engagement or finding you're proud of]"
+        "Web application penetration testing with OWASP ZAP and Burp Suite",
+        "Findings mapped to the OWASP Top 10 and CWE Top 25",
+        "Reports with step-by-step proof of concept and prioritised remediation"
       ]
     }
   ],
@@ -93,15 +124,15 @@ const CONTENT = {
   philosophy: [
     {
       title: "Start from how things actually fail",
-      body: "Penetration testing taught me that attackers don't read policies. I test a control by asking how I'd get around it, not by checking that a document exists."
+      body: "Application security testing taught me that attackers don't read policies. I test a control by asking how I'd get around it, not by checking that a document exists."
     },
     {
       title: "Evidence beats documents",
       body: "A control that can't show it worked last quarter isn't a control yet. Give me five controls with evidence over fifty with good intentions."
     },
     {
-      title: "Know which clock is running",
-      body: "An incident doesn't start one deadline, it starts several at once — APRA, the OAIC, ASIC, each with its own trigger and window. Knowing which clocks apply before the incident happens is half the job."
+      title: "Automate the paperwork, not the judgement",
+      body: "I build tools to generate gap assessment reports, TPRM updates and contract reviews, because the mechanical parts of GRC work shouldn't eat the hours that judgement calls need."
     },
     {
       title: "Write for the person deciding",
