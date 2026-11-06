@@ -27,16 +27,16 @@
   </header>
 
   <main>
+    <!-- All the text below is filled in from content.js. Edit the words there, not here. -->
     <div class="intro">
       <!-- EDIT: add a photo called photo.jpg to the repository, then swap the div below for:
-           <img class="photo" src="photo.jpg" alt="[Your Name]"> -->
+           <img class="photo" src="photo.jpg" alt="photo"> -->
       <div class="photo" aria-hidden="true">YN</div>
       <div>
-        <h1>Hi, I'm [Your Name]. I help organisations make security and privacy decisions they can defend.</h1>
-        <p class="lede">I'm a GRC, privacy and AI governance consultant in Adelaide. I started out breaking into systems as a penetration tester, then moved to the other side of the table: audits, controls testing, risk and privacy programmes.</p>
-        <p>I'm most interested in where APRA's prudential standards, the Privacy Act and ASD's new Essentials framework meet, and in how organisations can adopt AI without losing control of it.</p>
-        <!-- EDIT: your past employers or clients, if you're happy to name them -->
-        <p class="employers">Previously at <b>[Employer]</b>, <b>[Employer]</b> and <b>[Employer]</b>.</p>
+        <h1 id="hero-headline"></h1>
+        <p class="lede" id="hero-intro-1"></p>
+        <p id="hero-intro-2"></p>
+        <p class="employers" id="employers-line"></p>
       </div>
     </div>
 
@@ -93,5 +93,7 @@
     });
   })();
 </script>
+<script src="content.js"></script>
+<script src="common.js"></script>
 </body>
 </html>
