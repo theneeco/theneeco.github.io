@@ -19,7 +19,11 @@ const CONTENT = {
   heroHeadline: "Hi, I'm Nikhil Kubsad. I help organisations make security and privacy decisions they can defend.",
   heroIntro1: "I'm a GRC specialist with hands-on experience running ISO 27001 ISMS programmes, internal audits and control validation, and third-party and supply-chain security from vendor intake through offboarding — across healthcare, BFSI, automotive and logistics, in India and Australia. ISO 27001 Lead Auditor and CIPM-certified, with a Master of Cyber Security from RMIT.",
   heroIntro2: "I build tooling to replace manual GRC work rather than just doing it by hand — internal apps for TPRM reporting, gap assessment generation and contract review. Currently searching for my next GRC, privacy or AI governance role in Australia, and building public projects in the meantime.",
-  employers: ["Tsaaro Consulting", "CyRAACS", "LTG Infrastructure"],
+  employers: [
+    { name: "Tsaaro Consulting", url: "https://tsaaro.com" },
+    { name: "CyRAACS", url: "https://www.cyraacs.com" },
+    { name: "LTG Infrastructure", url: "https://ltgindia.com" }
+  ],
 
   // ---------- Contact links, used in the header, footer and Contact page ----------
   linkedin: "https://www.linkedin.com/in/nikhilckubsad",

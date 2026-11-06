@@ -26,7 +26,12 @@
   var employersEl = document.getElementById('employers-line');
   if (employersEl && CONTENT.employers && CONTENT.employers.length) {
     employersEl.innerHTML = 'Previously at ' +
-      CONTENT.employers.map(function (e) { return '<b>' + e + '</b>'; }).join(', ') + '.';
+      CONTENT.employers.map(function (e) {
+        if (e && typeof e === 'object' && e.url) {
+          return '<a href="' + e.url + '" target="_blank" rel="noopener"><b>' + e.name + '</b></a>';
+        }
+        return '<b>' + (e.name || e) + '</b>';
+      }).join(', ') + '.';
   }
 
   // ----- Journey page (most recent first) -----
