@@ -12,12 +12,12 @@
 const CONTENT = {
 
   // ---------- Used in the header on every page, and the home page ----------
-  name: "[Your Name]",
+  name: "Nikhil C Kubsad",
   tagline: "GRC, privacy and AI governance consultant. Adelaide, South Australia.",
 
   // ---------- Home page ----------
-  heroHeadline: "Hi, I'm [Your Name]. I help organisations make security and privacy decisions they can defend.",
-  heroIntro1: "I'm a GRC, privacy and AI governance consultant in Adelaide. I started out breaking into systems as a penetration tester, then moved to the other side of the table: audits, controls testing, risk and privacy programmes.",
+  heroHeadline: "Hi, I'm Nikhil. I help organisations make security and privacy decisions they can defend.",
+  heroIntro1: "I'm a GRC, privacy and AI governance consultant in Australia. I started out breaking into systems as a penetration tester, then moved to the other side of the table: audits, controls testing, risk and privacy programmes.",
   heroIntro2: "I'm most interested in where APRA's prudential standards, the Privacy Act and ASD's new Essentials framework meet, and in how organisations can adopt AI without losing control of it.",
   employers: ["[Employer]", "[Employer]", "[Employer]"],
 
