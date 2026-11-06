@@ -163,4 +163,15 @@
     linkedinLink.href = CONTENT.linkedin;
     linkedinLink.textContent = CONTENT.linkedin.replace(/^https?:\/\//, '');
   }
+
+  var emailLink = document.getElementById('email-link');
+  if (emailLink && CONTENT.email) {
+    emailLink.href = 'mailto:' + CONTENT.email;
+    emailLink.textContent = CONTENT.email;
+  }
+
+  var emailButton = document.getElementById('email-button');
+  if (emailButton && CONTENT.email) {
+    emailButton.href = 'mailto:' + CONTENT.email;
+  }
 })();

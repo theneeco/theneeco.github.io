@@ -27,6 +27,7 @@ const CONTENT = {
 
   // ---------- Contact links, used in the header, footer and Contact page ----------
   linkedin: "https://www.linkedin.com/in/nikhilckubsad",
+  email: "nikhilckubsad@gmail.com",
 
   // ---------- Journey page: one entry per stage of your career, MOST RECENT FIRST ----------
   // Add or remove entries by copying a whole { ... }, block. The first one with current: true gets the red dot.
