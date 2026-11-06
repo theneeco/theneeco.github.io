@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- EDIT: your name -->
+<title>[Your Name] · GRC, privacy and AI governance</title>
+<meta name="description" content="GRC, privacy and AI governance consultant in Adelaide. Former penetration tester. CRISC, CIPM.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+  <header class="site-head">
+    <a class="site-name" href="index.html">[Your Name]</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="journey.html">Journey</a></li>
+        <li><a href="philosophy.html">Philosophy</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="field-notes.html">Field notes</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="intro">
+      <!-- EDIT: add a photo called photo.jpg to the repository, then swap the div below for:
+           <img class="photo" src="photo.jpg" alt="[Your Name]"> -->
+      <div class="photo" aria-hidden="true">YN</div>
+      <div>
+        <h1>Hi, I'm [Your Name]. I help organisations make security and privacy decisions they can defend.</h1>
+        <p class="lede">I'm a GRC, privacy and AI governance consultant in Adelaide. I started out breaking into systems as a penetration tester, then moved to the other side of the table: audits, controls testing, risk and privacy programmes.</p>
+        <p>I'm most interested in where APRA's prudential standards, the Privacy Act and ASD's new Essentials framework meet, and in how organisations can adopt AI without losing control of it.</p>
+        <!-- EDIT: your past employers or clients, if you're happy to name them -->
+        <p class="employers">Previously at <b>[Employer]</b>, <b>[Employer]</b> and <b>[Employer]</b>.</p>
+      </div>
+    </div>
+
+    <ul class="index" aria-label="Sections of this site">
+      <li><a href="journey.html"><span class="index-name">Journey</span><span class="index-desc">From penetration testing to governance, and what each stage taught me.</span></a></li>
+      <li><a href="philosophy.html"><span class="index-name">Philosophy</span><span class="index-desc">How I think about risk, evidence and privacy.</span></a></li>
+      <li><a href="work.html"><span class="index-name">Work</span><span class="index-desc">Public projects you can open and check.</span></a></li>
+      <li><a href="field-notes.html"><span class="index-name">Field notes</span><span class="index-desc">Short takes on Australian security and privacy news.</span></a></li>
+      <li><a href="contact.html"><span class="index-name">Contact</span><span class="index-desc">The best way to reach me.</span></a></li>
+    </ul>
+
+    <h2>A small demo of how I think</h2>
+    <div class="clock ticking" aria-live="polite">
+      <p class="clock-head">If ransomware hit an APRA-regulated super fund right now</p>
+      <p class="clock-sub">Clock started <strong id="clock-start">just now</strong> (Adelaide time). These notices would fall due.</p>
+      <table>
+        <thead><tr><th scope="col">Notice</th><th scope="col" class="right">Due by</th></tr></thead>
+        <tbody id="clock-rows"></tbody>
+      </table>
+      <p class="clock-foot">Illustrative only, not legal advice. Each clock starts when the entity becomes aware, and the standards set the exact triggers.</p>
+    </div>
+  </main>
+
+  <footer class="site-foot">
+    <span>Adelaide, South Australia</span>
+    <span><a href="contact.html">Get in touch</a></span>
+  </footer>
+</div>
+
+<script>
+  (function () {
+    const tz = 'Australia/Adelaide';
+    const start = new Date();
+    const fmt = new Intl.DateTimeFormat('en-AU', { timeZone: tz, weekday: 'short', day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' });
+    const fmtDate = new Intl.DateTimeFormat('en-AU', { timeZone: tz, weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
+    const hours = h => new Date(start.getTime() + h * 3600e3);
+    const days = d => new Date(start.getTime() + d * 864e5);
+    const rows = [
+      { what: 'APRA, if the business continuity plan is activated', note: 'CPS 230', at: hours(24), show: fmt, cls: 'soonest' },
+      { what: 'APRA, material information security incident', note: 'CPS 234', at: hours(72), show: fmt },
+      { what: 'OAIC, proposed reporting window for eligible data breaches', note: 'Privacy Act, Tranche 2 exposure draft (not yet law)', at: hours(72), show: fmt, cls: 'proposed' },
+      { what: 'Finish assessing whether it is an eligible data breach', note: 'Privacy Act, notifiable data breaches scheme', at: days(30), show: fmtDate },
+      { what: 'ASIC, if it is a significant breach of a core obligation', note: 'RG 78 reportable situations', at: days(30), show: fmtDate }
+    ];
+    document.getElementById('clock-start').textContent = fmt.format(start);
+    const body = document.getElementById('clock-rows');
+    rows.forEach(r => {
+      const tr = document.createElement('tr');
+      if (r.cls) tr.className = r.cls;
+      const what = document.createElement('td'); what.className = 'what'; what.textContent = r.what;
+      const small = document.createElement('small'); small.textContent = r.note; what.appendChild(small);
+      const when = document.createElement('td'); when.className = 'when'; when.textContent = r.show.format(r.at);
+      tr.append(what, when); body.appendChild(tr);
+    });
+  })();
+</script>
+</body>
+</html>
