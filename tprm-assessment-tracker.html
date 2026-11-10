@@ -107,92 +107,65 @@
     <h2>Architecture</h2>
     <p>The design rule is the same one behind the GRC evidence-collection agent: the scoring engine can recommend, but it can never approve, and nothing counts as done until a named human says so.</p>
     <figure class="diagram-fig">
-      <svg viewBox="0 0 760 660" role="img" aria-label="Code scores, a human decides, the log remembers" style="font-size:13px">
+      <svg viewBox="0 0 700 820" role="img" aria-label="Code scores, a human decides, the log remembers" style="font-size:13px">
   <defs>
     <marker id="tprm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M0 0L10 5L0 10z" fill="#B9CBBF"/>
     </marker>
   </defs>
-  <text x="24" y="32" font-size="15" font-weight="600" fill="#1C2B27">Code scores, a human decides, the log remembers</text>
+  <text x="120" y="32" font-size="15" font-weight="600" fill="#1C2B27">Code scores, a human decides, the log remembers</text>
 
   <g fill="none" stroke="#B9CBBF" stroke-width="1.25">
-    <path d="M204 92H244" marker-end="url(#tprm-arrow)"/>
-    <path d="M600 128V176" marker-end="url(#tprm-arrow)"/>
-    <path d="M204 212H244" marker-start="url(#tprm-arrow)" marker-end="url(#tprm-arrow)"/>
-    <path d="M424 212H464" marker-end="url(#tprm-arrow)"/>
-    <path d="M334 248V336" marker-end="url(#tprm-arrow)"/>
-    <path d="M424 372H560" marker-end="url(#tprm-arrow)"/>
-    <path d="M648 408V448" marker-end="url(#tprm-arrow)"/>
-    <path d="M490 504V544" marker-end="url(#tprm-arrow)"/>
-    <path d="M300 572H134V128" marker-end="url(#tprm-arrow)"/>
-  </g>
-  <text x="150" y="562" font-size="10.5" fill="#4A5D57">approval resets the clock</text>
-
-  <g>
-    <rect x="24" y="56" width="180" height="72" rx="8" fill="none" stroke="#B9CBBF" stroke-width="1.25"/>
-    <text x="36" y="80" font-weight="600" fill="#1C2B27">Vendor register</text>
-    <text x="36" y="96" font-size="11.5" fill="#4A5D57">16 fictional vendors</text>
-    <text x="36" y="112" font-size="11.5" fill="#4A5D57">risk tier and due date</text>
+    <path d="M350 150V190" marker-end="url(#tprm-arrow)"/>
+    <path d="M350 280V320" marker-end="url(#tprm-arrow)"/>
+    <path d="M350 410V450" marker-end="url(#tprm-arrow)"/>
+    <path d="M350 540V580" marker-end="url(#tprm-arrow)"/>
+    <path d="M350 670V710" marker-end="url(#tprm-arrow)"/>
   </g>
 
   <g>
-    <rect x="244" y="56" width="180" height="72" rx="8" fill="none" stroke="#B9CBBF" stroke-width="1.25"/>
-    <text x="256" y="80" font-weight="600" fill="#1C2B27">Daily scheduler</text>
-    <text x="256" y="96" font-size="11.5" fill="#4A5D57">cron, weekdays 7am</text>
-    <text x="256" y="112" font-size="11.5" fill="#4A5D57">works out who's due</text>
+    <rect x="120" y="60" width="460" height="90" rx="8" fill="none" stroke="#B9CBBF" stroke-width="1.25"/>
+    <text x="144" y="90" font-weight="600" fill="#1C2B27">Vendor register</text>
+    <text x="144" y="110" font-size="12" fill="#4A5D57">16 fictional vendors</text>
+    <text x="144" y="128" font-size="12" fill="#4A5D57">each with a risk tier and due date</text>
   </g>
 
   <g>
-    <rect x="24" y="176" width="180" height="72" rx="8" fill="none" stroke="#B9CBBF" stroke-width="1.25"/>
-    <text x="36" y="200" font-weight="600" fill="#1C2B27">Vendor (external)</text>
-    <text x="36" y="216" font-size="11.5" fill="#4A5D57">replies in their own time</text>
+    <rect x="120" y="190" width="460" height="90" rx="8" fill="none" stroke="#B9CBBF" stroke-width="1.25"/>
+    <text x="144" y="220" font-weight="600" fill="#1C2B27">Scheduled emails</text>
+    <text x="144" y="240" font-size="12" fill="#4A5D57">Cron sends requests and reminders</text>
+    <text x="144" y="258" font-size="12" fill="#4A5D57">then escalates if a vendor goes quiet</text>
   </g>
 
   <g>
-    <rect x="244" y="176" width="180" height="72" rx="8" fill="none" stroke="#B9CBBF" stroke-width="1.25"/>
-    <text x="256" y="200" font-weight="600" fill="#1C2B27">Email engine</text>
-    <text x="256" y="216" font-size="11.5" fill="#4A5D57">SMTP or outbox mode</text>
-    <text x="256" y="232" font-size="11.5" fill="#4A5D57">requests, reminders, escalations</text>
+    <rect x="120" y="320" width="460" height="90" rx="8" fill="none" stroke="#B9CBBF" stroke-width="1.25"/>
+    <text x="144" y="350" font-weight="600" fill="#1C2B27">Vendor replies</text>
+    <text x="144" y="370" font-size="12" fill="#4A5D57">Questionnaire comes back</text>
+    <text x="144" y="388" font-size="12" fill="#4A5D57">SHA-256 fingerprinted, never overwritten</text>
   </g>
 
   <g>
-    <rect x="464" y="176" width="272" height="120" rx="8" fill="#B8322C" fill-opacity="0.12" stroke="#B8322C" stroke-width="2"/>
-    <text x="476" y="200" font-weight="600" fill="#1C2B27">Guardrails in code</text>
-    <text x="476" y="216" font-size="11.5" fill="#1C2B27">only an approval resets the clock</text>
-    <text x="476" y="232" font-size="11.5" fill="#1C2B27">a critical finding blocks approval</text>
-    <text x="476" y="248" font-size="11.5" fill="#1C2B27">risky files are refused outright</text>
-    <text x="476" y="264" font-size="11.5" fill="#1C2B27">every action is hash-chained</text>
-    <text x="476" y="280" font-size="11.5" fill="#1C2B27">mail settings read from .env, never hardcoded</text>
+    <rect x="120" y="450" width="460" height="90" rx="8" fill="#B8322C" fill-opacity="0.12" stroke="#B8322C" stroke-width="2"/>
+    <text x="144" y="480" font-weight="600" fill="#1C2B27">Scoring engine</text>
+    <text x="144" y="500" font-size="12" fill="#1C2B27">11 rules, mapped to ISO 27001</text>
+    <text x="144" y="518" font-size="12" fill="#1C2B27">A critical finding blocks approval</text>
   </g>
 
   <g>
-    <rect x="244" y="336" width="180" height="72" rx="8" fill="none" stroke="#B9CBBF" stroke-width="1.25"/>
-    <text x="256" y="360" font-weight="600" fill="#1C2B27">Evidence store</text>
-    <text x="256" y="376" font-size="11.5" fill="#4A5D57">SHA-256 fingerprinted</text>
-    <text x="256" y="392" font-size="11.5" fill="#4A5D57">files never overwritten</text>
+    <rect x="120" y="580" width="460" height="90" rx="8" fill="none" stroke="#B9CBBF" stroke-width="1.25"/>
+    <text x="144" y="610" font-weight="600" fill="#1C2B27">Review decision</text>
+    <text x="144" y="630" font-size="12" fill="#4A5D57">A named human approves or rejects</text>
+    <text x="144" y="648" font-size="12" fill="#4A5D57">Only approval resets the clock</text>
   </g>
 
   <g>
-    <rect x="424" y="336" width="312" height="72" rx="8" fill="none" stroke="#B9CBBF" stroke-width="1.25"/>
-    <text x="436" y="360" font-weight="600" fill="#1C2B27">Scoring engine</text>
-    <text x="436" y="376" font-size="11.5" fill="#4A5D57">11 rules, mapped to ISO 27001 Annex A</text>
-    <text x="436" y="392" font-size="11.5" fill="#4A5D57">produces a recommendation, never approves</text>
-  </g>
-
-  <g>
-    <rect x="244" y="448" width="492" height="56" rx="8" fill="none" stroke="#B9CBBF" stroke-width="1.25"/>
-    <text x="256" y="472" font-weight="600" fill="#1C2B27">Review decision</text>
-    <text x="256" y="488" font-size="11.5" fill="#4A5D57">a named human: approves, rejects, or asks for more information</text>
-  </g>
-
-  <g>
-    <rect x="380" y="544" width="220" height="72" rx="8" fill="none" stroke="#B9CBBF" stroke-width="1.25"/>
-    <text x="392" y="568" font-weight="600" fill="#1C2B27">Audit log</text>
-    <text x="392" y="584" font-size="11.5" fill="#4A5D57">hash-chained</text>
-    <text x="392" y="600" font-size="11.5" fill="#4A5D57">verify-log detects any break</text>
+    <rect x="120" y="710" width="460" height="90" rx="8" fill="none" stroke="#B9CBBF" stroke-width="1.25"/>
+    <text x="144" y="740" font-weight="600" fill="#1C2B27">Audit log</text>
+    <text x="144" y="760" font-size="12" fill="#4A5D57">Every action is hash-chained</text>
+    <text x="144" y="778" font-size="12" fill="#4A5D57">verify-log detects any later edit</text>
   </g>
 </svg>
-      <figcaption>Tool architecture &middot; 8 components, the guardrails highlighted</figcaption>
+      <figcaption>Tool architecture &middot; six steps, the guardrail highlighted</figcaption>
     </figure>
 
     <h2>Security and governance by design</h2>
