@@ -56,7 +56,7 @@
         <tr><td>Lifecycle stages</td><td>Requested, Reminder Sent, Final Notice Sent, Escalated, Under Review, Approved</td></tr>
         <tr><td>Interfaces</td><td>A daily cron job, plus six CLI commands for the parts a human runs</td></tr>
         <tr><td>Human sign-off</td><td>Every decision; sending an email never changes a vendor's approval status</td></tr>
-        <tr><td>Status</td><td>Built and tested against the fictional register included in the repo, not yet run against a real organisation's vendors</td></tr>
+        <tr><td>Status</td><td>Run live once against the fictional register: 10 requests sent, one vendor taken end to end through scoring and a human decision</td></tr>
       </tbody>
     </table>
     </div>
@@ -78,6 +78,31 @@
       <li>Every action, a request sent, a reminder, a reviewer's decision, is appended to a hash-chained audit log, so a later edit or deletion is detectable by running <code>verify-log</code>.</li>
     </ol>
     <p>On Mondays, the security lead also gets a one-email digest of everything needing attention: escalated vendors, responses waiting too long for review, overdue reassessments and conditions, and vendors with no business owner on file.</p>
+
+    <h2>A real run through the lifecycle</h2>
+    <p>I ran the tool live (not a dry run) against the fictional register once, to see its own output rather than describe it secondhand. It sent 10 assessment requests and one repeat escalation as real <code>.eml</code> files, then I picked one vendor, SecureVault Offsite Backup, a newly onboarded High-tier vendor, and filled out its questionnaire myself to take it all the way through.</p>
+    <p>I answered mostly well, with one deliberate gap: MFA enforced for admin accounts but not yet rolled out to all staff. Running <code>receive</code> scored the response 70/100, but the engine found more than I'd planted:</p>
+    <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Severity</th><th>Finding</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Critical</td><td>MFA not enforced for staff with system access (knockout)</td></tr>
+        <tr><td>High</td><td>Data stored offshore (United States, AWS us-east-1)</td></tr>
+        <tr><td>Medium</td><td>Penetration test older than 12 months (435 days)</td></tr>
+        <tr><td>Medium</td><td>Offshore subprocessor: ColdStore Infrastructure (Singapore)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The subprocessor finding wasn't something I'd set out to test; I'd added a second subprocessor row to the template almost as an afterthought, and the engine picked it up on its own.</p>
+
+    <div class="finding">
+      <p><b>The guardrail held before I'd even asked it to.</b> I ran <code>review --decision approve-with-conditions</code> expecting it to go through. It refused outright: <i>"This response has knockout findings: MFA not enforced for staff with system access. Approval requires --accept-risk."</i></p>
+      <p class="lesson"><i>This is the rule from the README working exactly as documented, not a hypothetical. A Critical finding doesn't lower a score, it blocks the approval path entirely until someone writes down why they're accepting the risk.</i></p>
+    </div>
+
+    <p>I re-ran it with an explicit <code>--accept-risk</code> justification naming the risk owner, and the decision went through: <b>Approved with Conditions</b>, next reassessment due in six months, with two conditions on file (enforce MFA within 30 days, provide a signed risk acceptance for the offshore storage). <code>verify-log</code> confirmed all 18 rows of the audit log still chain correctly, including the three new rows this run added.</p>
 
     <h2>Architecture</h2>
     <p>The design rule is the same one behind the GRC evidence-collection agent: the scoring engine can recommend, but it can never approve, and nothing counts as done until a named human says so.</p>
@@ -188,8 +213,10 @@
     </table>
     </div>
 
-    <h2>Lessons from building it</h2>
+    <h2>Lessons from building and running it</h2>
     <ul class="plain">
+      <li><b>The knockout rule has to be a hard stop, not a warning.</b> When it refused my approval outright until I supplied a reason, that's what made the test worth doing. A rule a reviewer can click past under deadline pressure isn't a rule.</li>
+      <li><b>The scoring engine finds things you didn't plant.</b> I set out to test the MFA knockout and the engine also caught a stale pen test and an offshore subprocessor I'd added almost as an afterthought. That's the value of checking every answer against every rule, rather than only the ones a reviewer remembers to look for.</li>
       <li><b>Match by label, not coordinates.</b> Vendors insert rows, merge cells and reformat sheets. Matching the question text in column A survives that; matching a fixed cell reference silently reads the wrong answer.</li>
       <li><b>Only an approval should reset a compliance clock.</b> It's tempting to mark a vendor "assessed" the moment a request goes out. That's the mistake an auditor catches immediately, so the status only moves forward on a recorded human decision.</li>
       <li><b>A tamper-evident log is cheap to build and expensive to fake.</b> Chaining a hash from one row to the next costs almost nothing to implement, but it turns "prove this log wasn't edited" from a trust exercise into something you can actually check.</li>
