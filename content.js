@@ -127,16 +127,20 @@ const CONTENT = {
   // This page is a work in progress. Expect it to go through a few iterations.
   philosophy: [
     {
+      title: "Security is a business function first",
+      body: "Every industry protects something different. In healthcare it's patient data and clinical trust, in BFSI it's capital and counterparty risk, in automotive and logistics it's uptime and the physical supply chain. I start by learning what the business actually runs on, because that tells me what an adversary, or a regulator, would go after first."
+    },
+    {
+      title: "GRC should add momentum, not just gate it",
+      body: "I've seen third-party risk reporting eat days of manual work every cycle, so I built an internal tool to automate it. Speed and rigour aren't actually in tension if you automate the paperwork instead of the judgement calls. The business shouldn't have to choose between moving fast and staying compliant, and most of the time it doesn't have to."
+    },
+    {
       title: "Start from how things actually fail",
       body: "Application security testing taught me that attackers don't read policies. I test a control by asking how I'd get around it, not by checking that a document exists."
     },
     {
       title: "Evidence beats documents",
       body: "A control that can't show it worked last quarter isn't a control yet. Give me five controls with evidence over fifty with good intentions."
-    },
-    {
-      title: "Automate the paperwork, not the judgement",
-      body: "I build tools to generate gap assessment reports, TPRM updates and contract reviews, because the mechanical parts of GRC work shouldn't eat the hours that judgement calls need."
     },
     {
       title: "Write for the person deciding",
@@ -148,7 +152,11 @@ const CONTENT = {
     },
     {
       title: "Govern AI by use case",
-      body: "\"AI\" is too broad to govern. A chatbot answering member questions and a model deciding insurance claims need very different controls, so I start with an inventory of what's actually in use."
+      body: "\"AI\" is too broad to govern. A chatbot answering member questions and a model deciding insurance claims need very different controls, not one blanket policy."
+    },
+    {
+      title: "AI literacy is now a core skill",
+      body: "You can't govern what you don't understand from the outside. I built my own evidence-collection agent, deliberately weakened the model, and planted a prompt injection to see how it failed. Reading a vendor's model card isn't governance. Knowing how these systems actually break is."
     }
   ],
 

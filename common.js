@@ -76,6 +76,7 @@
   // ----- Philosophy page (numbered cards) -----
   var philosophyWrap = document.getElementById('philosophy-list');
   if (philosophyWrap && CONTENT.philosophy) {
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     CONTENT.philosophy.forEach(function (item, i) {
       var section = el('section', 'principle');
       var num = i + 1 < 10 ? '0' + (i + 1) : '' + (i + 1);
@@ -83,6 +84,22 @@
       section.appendChild(el('h2', null, item.title));
       section.appendChild(el('p', null, item.body));
       philosophyWrap.appendChild(section);
+
+      // Tilt the card toward whichever corner the mouse is nearest.
+      if (!reduceMotion) {
+        var maxTilt = 10;
+        section.addEventListener('mousemove', function (e) {
+          var rect = section.getBoundingClientRect();
+          var px = (e.clientX - rect.left) / rect.width - 0.5;
+          var py = (e.clientY - rect.top) / rect.height - 0.5;
+          var rotateY = px * maxTilt * 2;
+          var rotateX = -py * maxTilt * 2;
+          section.style.transform = 'perspective(800px) rotateX(' + rotateX.toFixed(2) + 'deg) rotateY(' + rotateY.toFixed(2) + 'deg)';
+        });
+        section.addEventListener('mouseleave', function () {
+          section.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg)';
+        });
+      }
     });
   }
 
