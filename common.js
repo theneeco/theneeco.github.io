@@ -1,5 +1,5 @@
 /*
-  Don't edit this file — it just takes the words from content.js and
+  Don't edit this file. It just takes the words from content.js and
   places them on the page. All your edits go in content.js.
 */
 (function () {
@@ -115,7 +115,7 @@
       });
     } else {
       var empty = el('div', 'empty');
-      empty.appendChild(el('p', null, "Nothing published here yet — check back soon."));
+      empty.appendChild(el('p', null, "Nothing published here yet. Check back soon."));
       register.replaceWith(empty);
     }
   }
@@ -152,7 +152,7 @@
       });
     } else {
       var emptyNotes = el('div', 'empty');
-      emptyNotes.appendChild(el('p', null, "No notes published yet — check back soon."));
+      emptyNotes.appendChild(el('p', null, "No notes published yet. Check back soon."));
       notesWrap.replaceWith(emptyNotes);
     }
   }

@@ -3,7 +3,7 @@
   Everything in quotes "like this" is text that shows on the site.
   Rules:
   - Keep the quote marks " " around every bit of text.
-  - If your text itself needs a straight quote mark, don't use one — reword instead.
+  - If your text itself needs a straight quote mark, don't use one; reword instead.
   - Keep every comma between items.
   - Don't delete the curly brackets { } or square brackets [ ].
   When you're done, save (commit) the file. The site updates in about a minute.
@@ -17,8 +17,8 @@ const CONTENT = {
 
   // ---------- Home page ----------
   heroHeadline: "Hi, I'm Nikhil. I help organisations make security and privacy decisions they can defend.",
-  heroIntro1: "I'm a GRC specialist with hands-on experience running ISO 27001 ISMS programmes, internal audits and control validation, and third-party and supply-chain security from vendor intake through offboarding — across healthcare, BFSI, automotive and logistics, in India and Australia. CRISC, ISO 27001 Lead Auditor and CIPM-certified, with a Master of Cyber Security from RMIT.",
-  heroIntro2: "I build tooling to replace manual GRC work rather than just doing it by hand — internal apps for TPRM reporting, gap assessment generation and contract review. Currently searching for my next GRC, privacy or AI governance role in Australia, and building public projects in the meantime.",
+  heroIntro1: "I'm a GRC specialist with hands-on experience running ISO 27001 ISMS programmes, internal audits and control validation, and third-party and supply-chain security from vendor intake through offboarding, across healthcare, BFSI, automotive and logistics, in India and Australia. CRISC, ISO 27001 Lead Auditor and CIPM-certified, with a Master of Cyber Security from RMIT.",
+  heroIntro2: "I build tooling to replace manual GRC work rather than just doing it by hand: internal apps for TPRM reporting, gap assessment generation and contract review. Currently searching for my next GRC, privacy or AI governance role in Australia, and building public projects in the meantime.",
   employers: [
     { name: "Tsaaro Consulting", url: "https://tsaaro.com" },
     { name: "CyRAACS", url: "https://www.cyraacs.com" },
@@ -31,7 +31,7 @@ const CONTENT = {
 
   // ---------- Journey page: one entry per stage of your career, MOST RECENT FIRST ----------
   // Add or remove entries by copying a whole { ... }, block. The first one with current: true gets the red dot.
-  // "highlights" is the list under the "What I built" dropdown — add or remove lines freely.
+  // "highlights" is the list under the "What I built" dropdown. Add or remove lines freely.
   journey: [
     {
       when: "Oct 2026 · Now · Australia",
@@ -39,11 +39,10 @@ const CONTENT = {
       role: "GRC, Privacy and AI Governance",
       current: true,
       headline: "Between roles, so I'm doing the work anyway.",
-      body: "Left Tsaaro Consulting on 2 October 2026 and I'm now looking for my next GRC, privacy or AI governance role in Australia. In the meantime I'm building self-directed projects — a regulatory-deadline tool, an open-source GRC contribution, assurance-review work — as public evidence rather than waiting for a role to generate it.",
-      learning: "That public work has to hold up without a client or a manager to catch a mistake before it ships — there's no safety net, so the rigour has to be the same or higher.",
+      body: "Left Tsaaro Consulting on 2 October 2026 and I'm now looking for my next GRC, privacy or AI governance role in Australia. In the meantime I'm building self-directed projects: a regulatory-deadline tool, an open-source GRC contribution, assurance-review work, as public evidence rather than waiting for a role to generate it.",
+      learning: "That public work has to hold up without a client or a manager to catch a mistake before it ships; there's no safety net, so the rigour has to be the same or higher.",
       highlights: [
-        "Breach Clock — a live tool mapping every regulator notification deadline an incident starts",
-        "CPS 230/234 assurance review for a fictional super fund, including a Board Risk Committee paper",
+                "CPS 230/234 assurance review for a fictional super fund, including a Board Risk Committee paper",
         "Pull request adding ASD Essentials to an open-source GRC platform",
         "See the My Agents page for the full list"
       ]
@@ -51,11 +50,11 @@ const CONTENT = {
     {
       when: "Sep 2025 to Oct 2026 · Remote",
       company: "Tsaaro Consulting",
-      role: "Manager — Data Privacy & AI Governance",
+      role: "Manager, Data Privacy & AI Governance",
       current: false,
       headline: "Took governance programmes from policy to evidence for clients across multiple frameworks at once.",
-      body: "Ran ISO 27001 and SOC 2 readiness engagements end to end — scoping, gap and risk assessments, control validation, remediation support and evidence handling for external audit and attestation — while defining and operationalising governance policies and control frameworks aligned to ISO 27001, NIST 800-53/171, DPDPA, PDPL and UK-GDPR.",
-      learning: "Training a whole organisation on information security governance taught me more about where controls actually break than any audit did — the gap is almost always in how a policy gets explained, not in the policy itself.",
+      body: "Ran ISO 27001 and SOC 2 readiness engagements end to end: scoping, gap and risk assessments, control validation, remediation support and evidence handling for external audit and attestation, while defining and operationalising governance policies and control frameworks aligned to ISO 27001, NIST 800-53/171, DPDPA, PDPL and UK-GDPR.",
+      learning: "Training a whole organisation on information security governance taught me more about where controls actually break than any audit did. The gap is almost always in how a policy gets explained, not in the policy itself.",
       highlights: [
         "ISO 27001 and SOC 2 readiness: scoping, gap/risk assessments, control validation, remediation, evidence handling",
         "Governance policies and control frameworks aligned to ISO 27001, NIST 800-53/171, DPDPA, PDPL and UK-GDPR",
@@ -68,11 +67,11 @@ const CONTENT = {
     {
       when: "Feb 2024 to Aug 2025 · Bengaluru",
       company: "CyRAACS",
-      role: "Consultant — Governance, Risk and Compliance",
+      role: "Consultant, Governance, Risk and Compliance",
       current: false,
       headline: "Spent a year embedded inside a major bank's TPRM function, then automated the parts that didn't need a human.",
       body: "Led end-to-end engagements from scoping through gap and risk assessments across ISO 27001, ISO 27701, SOC 2, NIST 800-53/171, DPDPA and PDPL, on both internal audit and external audit-readiness work. Spent part of this role as an outsourced third-party risk management resource embedded on-site at a major publicly-traded Indian bank, reporting directly to the bank's Head of TPRM.",
-      learning: "Reporting straight to a Head of TPRM inside a regulated bank showed me the difference between a finding that's technically correct and one a business owner can actually act on — translating one into the other is most of the job.",
+      learning: "Reporting straight to a Head of TPRM inside a regulated bank showed me the difference between a finding that's technically correct and one a business owner can actually act on; translating one into the other is most of the job.",
       highlights: [
         "End-to-end engagements across ISO 27001, ISO 27701, SOC 2, NIST 800-53/171, DPDPA and PDPL",
         "Internal audit team member, plus leading external audit-readiness engagements",
@@ -89,7 +88,7 @@ const CONTENT = {
       current: false,
       headline: "First real exposure to privacy as its own discipline, not a line item in a risk register.",
       body: "Mapped and documented IT infrastructure and streamlined procedural guidelines in Collibra, and supported Privacy Impact Assessments aligned with GDPR and the Australian Privacy Act.",
-      learning: "Even a short internship was enough to see that data governance tooling is only as good as the documentation habits behind it — the platform doesn't fix a team that doesn't update its records.",
+      learning: "Even a short internship was enough to see that data governance tooling is only as good as the documentation habits behind it; the platform doesn't fix a team that doesn't update its records.",
       highlights: [
         "Mapped and documented IT infrastructure in Collibra",
         "Supported Privacy Impact Assessments aligned with GDPR and the Australian Privacy Act"
@@ -102,7 +101,7 @@ const CONTENT = {
       current: false,
       headline: "Helped stand up a security programme from zero as the second person on the team.",
       body: "As the second member of a two-person security team reporting to the Head of InfoSec, helped build the organisation's security programme from the ground up, including access control, least-privilege practices and organisation-wide MFA.",
-      learning: "Building a security programme with two people meant there was nowhere to hide — you learn fast which controls actually get used and which ones just look good in a policy document.",
+      learning: "Building a security programme with two people meant there was nowhere to hide; you learn fast which controls actually get used and which ones just look good in a policy document.",
       highlights: [
         "Implemented access control and least-privilege practices",
         "Rolled out multi-factor authentication (MFA) across the organisation"
@@ -125,7 +124,7 @@ const CONTENT = {
   ],
 
   // ---------- Philosophy page: one entry per belief ----------
-  // This page is a work in progress — expect it to go through a few iterations.
+  // This page is a work in progress. Expect it to go through a few iterations.
   philosophy: [
     {
       title: "Start from how things actually fail",
@@ -159,38 +158,14 @@ const CONTENT = {
   agents: [
     {
       title: "GRC Evidence-Collection Agent",
-      body: "An AI agent that collects audit evidence across six simulated systems (Okta, HRIS, AWS IAM, AWS S3, GitHub, Jira), checks it against ISO 27001 and SOC 2 controls, and hands a reviewer a tamper-evident review pack. Every connector is read-only, pass/fail comes only from deterministic code, and evidence is SHA-256 hashed and locked on collection — the model never gets to decide a result. I stress-tested it with a weak local model and a planted prompt-injection attack, then moved the two weak points it exposed out of the prompt and into code.",
-      proves: "designing AI agents for regulated environments — guardrails enforced in code, tamper-evident evidence, and adversarial testing rather than trusting the model.",
+      body: "An AI agent that collects audit evidence across six simulated systems (Okta, HRIS, AWS IAM, AWS S3, GitHub, Jira), checks it against ISO 27001 and SOC 2 controls, and hands a reviewer a tamper-evident review pack. Every connector is read-only, pass/fail comes only from deterministic code, and evidence is SHA-256 hashed and locked on collection. The model never gets to decide a result. I stress-tested it with a weak local model and a planted prompt-injection attack, then moved the two weak points it exposed out of the prompt and into code.",
+      proves: "designing AI agents for regulated environments: guardrails enforced in code, tamper-evident evidence, and adversarial testing rather than trusting the model.",
       status: "live",
       due: null,
       link: "grc-evidence-agent.html"
     },
     {
-      title: "Breach Clock",
-      body: "A free web tool. Answer five or six questions about an incident and it lays out every notification clock that starts: CPS 234 (72 hours to APRA), CPS 230 (BCP activation), the Privacy Act's notifiable data breaches scheme, the proposed 72-hour OAIC regime, and ASIC RG 78 (30 days) — each linked back to the source paragraph.",
-      proves: "working knowledge of Australian financial services and privacy regulation.",
-      status: "building",
-      due: "Due Nov 2026",
-      link: null
-    },
-    {
-      title: "Finding to Board",
-      body: "One internal penetration test of my own lab, written up three ways: a technical report with evidence and CVSS, risk register entries with owners and ratings, and a two-page paper for a Board Risk Committee.",
-      proves: "translating technical findings into risk and governance language.",
-      status: "building",
-      due: "Due Dec 2026",
-      link: null
-    },
-    {
-      title: "Automated decisions in super fund privacy policies",
-      body: "From 10 December 2026, privacy policies must disclose substantially automated decisions. I'm scoring the public privacy policies of the 15 largest super funds, before and after the deadline, against a published rubric.",
-      proves: "privacy law and AI governance applied to a real deadline.",
-      status: "building",
-      due: "Due mid-Dec 2026",
-      link: null
-    },
-    {
-      title: "CPS 230 and CPS 234 assurance review — Southern Cross Super",
+      title: "CPS 230 and CPS 234 assurance review: Southern Cross Super",
       body: "A full review pack for a fictional 120k-member super fund that outsources administration, custody and cloud hosting: a critical operations register, a material service provider register, a CPS 234 control map with deliberate deficiencies, and a Board Risk Committee paper.",
       proves: "APRA prudential standards in an assurance setting.",
       status: "planned",
@@ -208,7 +183,7 @@ const CONTENT = {
   ],
 
   // ---------- Industry Notes page: one entry per note ----------
-  // Empty for now — add a { ... } block here (copy the commented example) when you're ready to publish the first one.
+  // Empty for now. Add a { ... } block here (copy the commented example) when you're ready to publish the first one.
   // {
   //   date: "2026-11-06",
   //   dateLabel: "6 November 2026",

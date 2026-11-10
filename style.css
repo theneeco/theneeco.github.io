@@ -8,8 +8,8 @@
   --pencil: #B8322C;
   --blue-ink: #2F4A7A;
   --live: #2E6B3F;
-  --sans: "Schibsted Grotesk", system-ui, sans-serif;
-  --serif: "Source Serif 4", Georgia, serif;
+  --sans: Calibri, Candara, "Segoe UI", Optima, Arial, sans-serif;
+  --serif: Calibri, Candara, "Segoe UI", Optima, Arial, sans-serif;
   --measure: 64ch;
 }
 * { box-sizing: border-box; }
