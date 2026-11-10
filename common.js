@@ -113,6 +113,10 @@
         var h3 = document.createElement('h3');
         if (proj.status === 'live' && proj.link) {
           var a = document.createElement('a'); a.href = proj.link; a.textContent = proj.title;
+          if (/^https?:\/\//.test(proj.link)) {
+            a.target = '_blank';
+            a.rel = 'noopener';
+          }
           h3.appendChild(a);
         } else {
           h3.textContent = proj.title;

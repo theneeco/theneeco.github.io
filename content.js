@@ -173,6 +173,14 @@ const CONTENT = {
       link: "grc-evidence-agent.html"
     },
     {
+      title: "TPRM Assessment Tracker",
+      body: "A third-party risk management tool that runs the whole vendor reassessment lifecycle: request, chase, receive, score, and a human decision that resets the clock. It emails vendors automatically on a schedule based on their risk tier, scores returned questionnaires against 11 rules mapped to ISO 27001:2022 Annex A, and writes every action to a hash-chained audit log so a later edit or deletion is detectable. The scoring engine never approves anything, a named reviewer makes the call.",
+      proves: "building deterministic GRC automation: a scheduled assessment lifecycle, evidence fingerprinting, and a scoring engine kept separate from the human approval it informs.",
+      status: "live",
+      due: null,
+      link: "https://github.com/theneeco/tprm-assessment-tracker"
+    },
+    {
       title: "CPS 230 and CPS 234 assurance review: Southern Cross Super",
       body: "A full review pack for a fictional 120k-member super fund that outsources administration, custody and cloud hosting: a critical operations register, a material service provider register, a CPS 234 control map with deliberate deficiencies, and a Board Risk Committee paper.",
       proves: "APRA prudential standards in an assurance setting.",
