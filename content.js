@@ -178,7 +178,7 @@ const CONTENT = {
       proves: "building deterministic GRC automation: a scheduled assessment lifecycle, evidence fingerprinting, and a scoring engine kept separate from the human approval it informs.",
       status: "live",
       due: null,
-      link: "https://github.com/theneeco/tprm-assessment-tracker"
+      link: "tprm-assessment-tracker.html"
     },
     {
       title: "CPS 230 and CPS 234 assurance review: Southern Cross Super",
