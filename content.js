@@ -163,7 +163,7 @@ const CONTENT = {
       proves: "designing AI agents for regulated environments — guardrails enforced in code, tamper-evident evidence, and adversarial testing rather than trusting the model.",
       status: "live",
       due: null,
-      link: "https://claude.ai/artifact/QxEJ2YChxFem3oD9iJhzFS"
+      link: "grc-evidence-agent.html"
     },
     {
       title: "Breach Clock",
