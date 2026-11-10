@@ -166,23 +166,23 @@ const CONTENT = {
   agents: [
     {
       title: "GRC Evidence-Collection Agent",
-      body: "An AI agent that collects audit evidence across six simulated systems (Okta, HRIS, AWS IAM, AWS S3, GitHub, Jira), checks it against ISO 27001 and SOC 2 controls, and hands a reviewer a tamper-evident review pack. Every connector is read-only, pass/fail comes only from deterministic code, and evidence is SHA-256 hashed and locked on collection. The model never gets to decide a result. I stress-tested it with a weak local model and a planted prompt-injection attack, then moved the two weak points it exposed out of the prompt and into code.",
-      proves: "designing AI agents for regulated environments: guardrails enforced in code, tamper-evident evidence, and adversarial testing rather than trusting the model.",
+      body: "Collects audit evidence across six simulated systems, scores it against ISO 27001 and SOC 2, and hands a reviewer a tamper-evident pack. Code decides pass or fail, never the model. Stress-tested with a weak local model and a planted prompt injection.",
+      proves: "AI agents for regulated environments, with guardrails in code, not prompts.",
       status: "live",
       due: null,
       link: "grc-evidence-agent.html"
     },
     {
       title: "TPRM Assessment Tracker",
-      body: "A third-party risk management tool that runs the whole vendor reassessment lifecycle: request, chase, receive, score, and a human decision that resets the clock. It emails vendors automatically on a schedule based on their risk tier, scores returned questionnaires against 11 rules mapped to ISO 27001:2022 Annex A, and writes every action to a hash-chained audit log so a later edit or deletion is detectable. The scoring engine never approves anything, a named reviewer makes the call.",
-      proves: "building deterministic GRC automation: a scheduled assessment lifecycle, evidence fingerprinting, and a scoring engine kept separate from the human approval it informs.",
+      body: "Runs the vendor reassessment lifecycle end to end: request, chase, score, and a human decision that resets the clock. Scores responses against 11 rules mapped to ISO 27001, and hash-chains the audit log. Ran it live, it refused an approval until I accepted the risk.",
+      proves: "Deterministic GRC automation, with human sign-off kept separate from the scoring.",
       status: "live",
       due: null,
       link: "tprm-assessment-tracker.html"
     },
     {
       title: "CPS 230 and CPS 234 assurance review: Southern Cross Super",
-      body: "A full review pack for a fictional 120k-member super fund that outsources administration, custody and cloud hosting: a critical operations register, a material service provider register, a CPS 234 control map with deliberate deficiencies, and a Board Risk Committee paper.",
+      body: "A full review pack for a fictional super fund: operations register, service provider register, a control map with deliberate deficiencies, and a Board paper.",
       proves: "APRA prudential standards in an assurance setting.",
       status: "planned",
       due: "Dec 2026",
@@ -190,8 +190,8 @@ const CONTENT = {
     },
     {
       title: "ASD Essentials library for CISO Assistant",
-      body: "Adding ASD's new Essentials framework, published October 2026, to an open-source GRC platform used across the industry, with a mapping from the Essential Eight so both frameworks stay comparable during the transition.",
-      proves: "Essential Eight and ASD Essentials, and open-source GRC tooling.",
+      body: "Adding ASD's new Essentials framework to an open-source GRC platform, mapped back to the Essential Eight so both stay comparable.",
+      proves: "Essential Eight, ASD Essentials, and open-source GRC tooling.",
       status: "planned",
       due: "Jan 2027",
       link: null
