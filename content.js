@@ -158,6 +158,14 @@ const CONTENT = {
   // link: the URL once it's live, or null while it isn't
   agents: [
     {
+      title: "GRC Evidence-Collection Agent",
+      body: "An AI agent that collects audit evidence across six simulated systems (Okta, HRIS, AWS IAM, AWS S3, GitHub, Jira), checks it against ISO 27001 and SOC 2 controls, and hands a reviewer a tamper-evident review pack. Every connector is read-only, pass/fail comes only from deterministic code, and evidence is SHA-256 hashed and locked on collection — the model never gets to decide a result. I stress-tested it with a weak local model and a planted prompt-injection attack, then moved the two weak points it exposed out of the prompt and into code.",
+      proves: "designing AI agents for regulated environments — guardrails enforced in code, tamper-evident evidence, and adversarial testing rather than trusting the model.",
+      status: "live",
+      due: null,
+      link: "https://claude.ai/artifact/QxEJ2YChxFem3oD9iJhzFS"
+    },
+    {
       title: "Breach Clock",
       body: "A free web tool. Answer five or six questions about an incident and it lays out every notification clock that starts: CPS 234 (72 hours to APRA), CPS 230 (BCP activation), the Privacy Act's notifiable data breaches scheme, the proposed 72-hour OAIC regime, and ASIC RG 78 (30 days) — each linked back to the source paragraph.",
       proves: "working knowledge of Australian financial services and privacy regulation.",
